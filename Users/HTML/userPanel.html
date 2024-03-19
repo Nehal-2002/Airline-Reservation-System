@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Login Panel</title>
+
+	<link type="text/css" rel="stylesheet" href="bootstrap.min_booking.css" />
+
+	<link type="text/css" rel="stylesheet" href="userPanel.css" />
+</head>
+<body>
+		
+	<div id="booking" class="section">
+		<div class="navbar">
+			<img src="logo.png">
+			  <div class="icon">
+				  <a class="logo" href="home.html" id="logo"><span>BookMy</span>Flight </a>
+			  </div>
+  
+			  <div class="menu">
+				<ul>
+					<!-- <li><a href="home.html">HOME</a></li> -->
+					<li><a href="listFlight.html">Flight&nbspList</a></li>
+					<!-- <li><a href="#">CONTACT&nbspUS</a></li> -->
+					<li><a href="bookingHistory.html">Booking&nbspHistory</a></li>
+					<li><a href="#" onclick="openPopup()">Contact&nbspUs</a></li>
+					<li><a id="userName" class="unclickable">Username</a></li> <!--Profile-->
+					<li><a href="logout">Logout</a></li>
+				</ul>
+			</div>
+  
+		  </div> 
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="booking-cta">
+							<h1>Hay!!<br><span>Book Now</span><br>     & Travel</h1>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							<form id="form">
+								<div class="form-group">
+									<div class="form-checkbox">
+										<!-- <label for="roundtrip">
+											<input type="radio" id="roundtrip" name="flight-type">
+											<span></span>Roundtrip
+										</label> -->
+										<label for="one-way">
+											<input type="radio" id="one-way" name="flight-type">
+											<span></span>One way
+										</label>
+										<label for="multi-city">
+											<input type="radio" id="multi-city" name="flight-type">
+											<span></span>Multi-City
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flying from</span>
+											<input id="Origin" class="form-control" type="text" placeholder="City or airport" >
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flyning to</span>
+											<input id="Destination" class="form-control" type="text" placeholder="City or airport">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Departing</span>
+											<input id="departureDate" class="form-control" type="date" >
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Returning</span>
+											<input id="arrivalDate" class="form-control" type="date">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Adults (18+)</span>
+											<select id="adultNumber" class="form-control" >
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Children (0-17)</span>
+											<select id="childNumber" class="form-control">
+												<option>0</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Travel class</span>
+											<select id="class" class="form-control" >
+												<option>Economy class</option>
+												<option>Business class</option>
+												<option>First class</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button id="submit" class="submit-btn">Search Flights</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="userPanel.js"></script>
+</body>
+</html>

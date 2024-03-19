@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flights List</title>
+    <link rel="stylesheet" href="listFlight.css" />
+</head>
+<body onload="fetchData()">
+
+  <div class="navbar">
+    <a href="#" class="unclickable">ADMIN PANEL</a>
+    <a href="adminDashboard.html">Dashboard</a>
+    <a href="addFlight.html">Add Flight</a>
+    <a href="manageAirlines.html">Manage Airlines</a>
+    <a href="queryHistory.html">Query History</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="dMode">
+    <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()">
+    <label for="hide-checkbox" class="toggle">
+      <span class="toggle-button">
+        <span class="crater crater-1"></span>
+        <span class="crater crater-2"></span>
+        <span class="crater crater-3"></span>   
+        <span class="crater crater-4"></span>
+        <span class="crater crater-5"></span>
+        <span class="crater crater-6"></span>
+        <span class="crater crater-7"></span>
+      </span>
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+    </label>
+  </div>
+<div class="tableContainer" id="tableContainer">
+  <h1 class="tableHeading">Flights List </h1>
+    <div class="tableFixHead">
+      <table>
+        <thead>
+            <tr>
+                <th>Flight No.</th>
+                <th>Airlines</th>
+                <th>Origin</th>
+                <th>Via</th>
+                <th>Destination</th>
+                <th>Dep Date</th>
+                <th>Dep Time</th>
+                <th>Arv Date</th>
+                <th>Arv Time</th>
+                <th>Status</th>
+              </tr>
+        </thead>
+        <tr>
+            <td id="date" colspan="10"><div class="date-row">
+                <h2>Today,</h2>
+                <h1 id="current-date"></h1>
+              </div> 
+            </td>
+        </tr>
+
+        <!--<tr>
+            <td>AI 101</td>
+            <td>Air India</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>On Time</td>
+            <td>
+              <div class="show">
+                <button onclick="sending()">Show</button>
+              </div>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="listFlight.js"></script>
+</body>

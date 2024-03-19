@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Flight</title>
+    <link type="text/css" rel="stylesheet" href="addFlight.css" />
+</head>
+
+<body onload="fetchAirlineData()">
+    <div class="navbar">
+        <a href="#" class="unclickable">ADMIN PANEL</a>
+        <a href="adminDashboard.html">Dashboard</a>
+        <a href="listFlight.html">List Flights</a>
+        <a href="manageAirlines.html">Manage Airlines</a>
+        <span id="currentDateTime"></span>
+        <a href="logout">Logout</a>
+    </div>
+    <div class="dMode">
+        <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()">
+        <label for="hide-checkbox" class="toggle">
+          <span class="toggle-button">
+            <span class="crater crater-1"></span>
+            <span class="crater crater-2"></span>
+            <span class="crater crater-3"></span>   
+            <span class="crater crater-4"></span>
+            <span class="crater crater-5"></span>
+            <span class="crater crater-6"></span>
+            <span class="crater crater-7"></span>
+          </span>
+          <span class="star star-1"></span>
+          <span class="star star-2"></span>
+          <span class="star star-3"></span>
+          <span class="star star-4"></span>
+          <span class="star star-5"></span>
+          <span class="star star-6"></span>
+          <span class="star star-7"></span>
+          <span class="star star-8"></span>
+        </label>
+      </div>
+    <div class="container">
+        <form class="flightDetails" action="addFlight" method="post">
+            <div class="form first">
+                <div class="title">Departure</div>
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="depDate">Date</label>
+                        <input name="depDate" id="depDate" type="date" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="depTime">Time</label>
+                        <input name="depTime" id="depTime" type="time" required>
+                    </div>
+                </div>
+                <div class="title">Arrival</div>
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="arvDate">Date</label>
+                        <input name="arvDate" id="arvDate" type="date">
+                    </div>
+                    <div class="input-field">
+                        <label for="arvTime">Time</label>
+                        <input name="arvTime" id="arvTime" type="time">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="org">From</label>
+                        <input type="search" name="org" list="locations" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="via">Via</label>
+                        <input type="search" name="via" list="locations">
+                    </div>
+                    <div class="input-field">
+                        <label for="dest">To</label>
+                        <input type="search" name="dest" list="locations" required>
+                    </div>
+                    <datalist id="locations">
+                        <option value="KOLKATA">
+                        <option value="BANGALORE">
+                        <option value="MUMBAI">
+                        <option value="DELHI">
+                        <option value="CHENNAI">
+                        <option value="ODISSA">
+                    </datalist>
+                </div>
+            </div>
+            <div class="form second">
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="duration">Duration</label>
+                        <input name="duration" type="number" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="flightno">Flight No.</label>
+                        <input name="flightno" type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="arl">Select Airline</label>
+                        <select name="arl" id="airlineSelect" required>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="first_class">Price (First Class)</label>
+                        <input name="first_class" type="number" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="business_class">Price (Business Class)</label>
+                        <input name="business_class" type="number" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="economy_class">Price (Economy Class)</label>
+                        <input name="economy_class" type="number" required>
+                    </div>
+                </div>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="status">Select Status</label>
+                        <select name="status" id="status" required>
+                            <option value="on time" selected>ON TIME</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="submit" class="buttons">
+                    <input type="submit" value="Add Flight" class="submitBtn">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="addFlight.js"></script>
+</body>
+
+</html>

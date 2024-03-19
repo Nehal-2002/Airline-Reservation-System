@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="userLogin.css" />
+</head>
+
+<body>
+
+  <body>
+
+    <div class="main">
+      <div class="navbar">
+        <img src="logo.png">
+        <div class="icon">
+          <a class="logo" href="home.html" id="logo"><span>BookMy</span>Flight </a>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="userSignup.html">SIGN&nbspUP</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="content">
+        <h1>Travel & <br><span>Explore the</span> <br>World</h1>
+
+        <form class="form" id="Form" action="login" method="post">
+          <h2>Login Here</h2>
+          <input type="email" name="email" placeholder="Enter Email Here" required>
+          <input type="password" name="password" placeholder="Enter Password Here" required>
+
+          <p class="links">
+            <a href="#" onclick="showPopup()">Forgot Password?</a>
+          </p>
+
+          <input type="submit" class="btnn" value="Login">
+          <p class="link">Don't have an account<br>
+            <a href="userSignup.html">Sign Up </a> here</a>
+          </p>
+        </form>
+
+        <div class="popup" id="popup">
+          <div class="cr">
+            <span class="popup-close" onclick="hidePopup()">&times;</span>
+          </div>
+          <h2>Forgot Password</h2>
+          <input type="text" id="userId" name="forgotEmail" placeholder="Enter Your ID" required>
+          <input type="password" id="password" name="securityQuestion" placeholder="New Password" required>
+          <input type="password" id="confirm-password" name="newPassword"
+            placeholder="Confirm New Password" required>
+          <button class="bt" onclick="changeData()">Reset Password</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script>
+      function showPopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+      }
+      function hidePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+      }
+      const changeData = () => {
+        let id = document.getElementById('userId').value
+        let userPassword = document.getElementById('password').value;
+        let userConfirmPassword = document.getElementById('confirm-password').value;
+
+        if (id.length != 24) {
+          alert("Id must be 24 character long")
+          return
+        }
+        else if(userPassword.length <5)
+        {
+          alert("Password must be atleast 5 character long")
+          return
+        }
+        else if((userPassword !== userConfirmPassword)){
+          alert("Confirm password in not matching with password")
+          return
+        }
+        else
+        {
+          let url = 'forgotPassword'
+
+          let p = fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+              userId:id,
+              Password : userPassword
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          })
+
+          p.then((response)=>{
+            return response.json()
+          })
+          .then((data)=>{
+            alert(data.Message)
+            if(data.Message == 'Successfully changed password')
+            {
+              document.getElementById('userId').value = ""
+              document.getElementById('password').value = ""
+              document.getElementById('confirm-password').value = ""
+            }
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
+        }
+      }
+
+    </script>
+
+  </body>
+
+</html>

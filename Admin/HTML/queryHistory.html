@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Query History</title>
+  <link rel="stylesheet" href="queryHistory.css">
+
+</head>
+
+<body onload="fetchData()">
+  <div class="navbar">
+    <a href="#" class="unclickable">ADMIN PANEL</a>
+    <a href="adminDashboard.html">Dashboard</a>
+    <a href="listFlight.html">List Flights</a>
+    <a href="addFlight.html">Add Flight</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="dMode">
+    <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()">
+    <label for="hide-checkbox" class="toggle">
+      <span class="toggle-button">
+        <span class="crater crater-1"></span>
+        <span class="crater crater-2"></span>
+        <span class="crater crater-3"></span>
+        <span class="crater crater-4"></span>
+        <span class="crater crater-5"></span>
+        <span class="crater crater-6"></span>
+        <span class="crater crater-7"></span>
+      </span>
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+    </label>
+  </div>
+  <div class="tableContainer" id="tableContainer">
+    <h1 class="tableHeading">Pending User's Quary</h1>
+    <div class="tableFixHead" id="queryList">
+      <!-- <div class="scrollable-content">
+        <h2>Email ID: anitsaha976@gmail.com</h2>
+        <p>Summer season is one of the four seasons of the year. ns of the yearSummer season is one of the four seasons
+          of the yearSummer seans of the yearSummer season is one of the four seasons of the yearSummer seans of the
+          yearSummer season is one of the four seasons of the yearSummer seans of the yearSummer season is one of the
+          four seasons of the yearSummer seans of the yearSummer season is one of the four seasons of the yearSummer
+          seans of the yearSummer season is one of the four seasons of the yearSummer seans of the yearSummer season is
+          one of the four seasons of the yearSummer seans of the yearSummer season is one of the four seasons of the
+          yearSummer seans of the yearSummer season is one of the four seasons of the yearSummer seans of the yearSummer
+          season is one of the four seasons of the yearSummer seans of the yearSummer season is one of the four seasons
+          of the yearSummer seans of the yearSummer season is one of the four seasons of the yearSummer seans of the
+          yearSummer season is one of the four seasons of the yearSummer seans of the yearSummer season is one of the
+          four seasons of the yearSummer seans of the yearSummer season is one of the four seasons of the yearSummer
+          seans of the yearSummer season is one of the four seasons of the yearSummer sea</p>
+        <button class="red-button">Solved</button>
+      </div>
+
+      <div class="scrollable-content">
+        <h2>Email ID: anitsaha976@gmail.com</h2>
+        <p>ns of the yearSummer season is one of the four seasons of the yearSummer season is one of the four seasons of
+          the year </p>
+        <button class="red-button">Solved</button>
+      </div>
+    </div> -->
+    </div>
+    <script>
+      let dark = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("isDark="))
+        ?.split("=")[1];
+      if (dark === "true") {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+      }
+      function toggleDarkMode() {
+        const checkbox = document.getElementById("hide-checkbox");
+        const body = document.body;
+
+        if (checkbox.checked) {
+          body.classList.add("dark-mode");
+          document.cookie = "isDark=true; path=/;";
+        } else {
+          body.classList.remove("dark-mode");
+          document.cookie = "isDark=false; path=/;";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkbox = document.getElementById("hide-checkbox");
+        const dark = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("isDark="))
+          ?.split("=")[1];
+
+        if (dark === "true") {
+          checkbox.checked = true;
+          document.body.classList.add("dark-mode");
+        } else {
+          checkbox.checked = false;
+        }
+      });
+
+      const fetchData = () => {
+        let url = "showQuery"
+
+        let p = fetch(url, {
+          method: 'POST'
+        })
+
+        p.then((response) => {
+          return response.json()
+        })
+          .then((data) => {
+
+            renderRow(data)
+          })
+      }
+
+      const renderRow = (data) => {
+        let mainContainer = document.getElementById('queryList')
+        for (let i = 0; i < data.length; i++) {
+          let subContainer = document.createElement('div')
+          subContainer.setAttribute('id', data[i]._id)
+          subContainer.className = "scrollable-content"
+
+          let eTag = document.createElement('h2')
+          eTag.innerHTML = 'Email ID: ' + data[i].Email;
+          eTag.innerHTML = data[i].Email
+          let qTag = document.createElement('p')
+          qTag.innerHTML = data[i].Query
+          let btn = document.createElement('button')
+          btn.className = "red-button"
+          btn.innerHTML = "Solved"
+          btn.onclick = () => { deleteRow(data[i]._id) }
+
+          subContainer.appendChild(eTag)
+          subContainer.appendChild(qTag)
+          subContainer.appendChild(btn)
+
+          mainContainer.appendChild(subContainer)
+        }
+      }
+
+      const deleteRow = (i) => {
+        let url = `deleteQuery/${i}`
+        let tempObj = { id: i }
+        let p = fetch(url, {
+          method: 'POST'
+        })
+
+        p.then((response) => {
+          return response.json()
+        })
+          .then((data) => {
+            if (data.Message == "Deleted") {
+              window.location.reload()
+            }
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
+
+    </script>
+</body>
+
+</html>

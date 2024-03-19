@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Available Airlines</title>
+  <link rel="stylesheet" href="seatMap.css" />
+</head>
+
+<body>
+  <div class="container">
+    <ul class="labels">
+      <li><span class="color-box aqua"></span><span class="label-text">First Class</span></li>
+      <li><span class="color-box gold"></span><span class="label-text">Business Class</span></li>
+      <li><span class="color-box lightgreen"></span><span class="label-text">Economy Class</span></li>
+      <li><span class="color-box selected"></span><span class="label-text">Selected</span></li>
+      <li><span class="color-box lightgray"></span><span class="label-text">Booked</span></li>
+    </ul>
+    <div class="info">
+      <p>Choose Your Desired Seat <br> & <a id="submit" href="#">Book Tickets Now</a></p>
+    </div>
+  </div>
+
+  <div class="plane">
+    <div class="cockpit">
+      <div class="fno" id="fno">
+        
+      </div>
+      <!-- Left plane wing -->
+      <div class="wing wing--left"></div>
+      <!-- Right plane wing -->
+      <div class="wing wing--right"></div>
+    </div>
+    <div class="exit exit--front fuselage"></div>
+    <ol class="cabin fuselage">
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <h3> <br> </h3>
+              <div class="corner-info">
+                <p class="seat-info">
+
+                </p>
+              </div>
+              <p class="additional-info">
+
+              </p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+        </ol>
+      </li>
+
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+            <div class="popup">
+              <p></p>
+            </div>
+          </li>
+        </ol>
+      </li>
+
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+          <li class="seat firstClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--6">
+        <ol class="seats" type="A">
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--6">
+        <ol class="seats" type="A">
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--6">
+        <ol class="seats" type="A">
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--6">
+        <ol class="seats" type="A">
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--6">
+        <ol class="seats" type="A">
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+          <li class="seat businessClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+
+      <li class="row row--1">
+        <ol class="seats" type="A">
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+          <li class="seat economyClass">
+            <span> </span>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <div class="exit exit--back fuselage"></div>
+  </div>
+  <script src="seatMap.js"></script>
+</body>
+
+</html>

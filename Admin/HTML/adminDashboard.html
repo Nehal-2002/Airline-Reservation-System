@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link type="text/css" rel="stylesheet" href="adminDashboard.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+
+<body onload="fetchData()">
+  <div class="navbar">
+    <a href="#" class="unclickable">ADMIN PANEL</a>
+    <a href="addFlight.html">Add Flight</a>
+    <a href="listFlight.html">List Flights</a>
+    <a href="manageAirlines.html">Manage Airlines</a>
+    <a href="queryHistory.html">Query History</a>
+    <span id="currentDateTime"></span>
+    <a href="logout">Logout</a>
+
+    <!-- <button type="button" onclick="return logout()">Click</button> -->
+  </div>
+  <div class="dMode">
+    <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()" checked>
+    <label for="hide-checkbox" class="toggle">
+      <span class="toggle-button">
+        <span class="crater crater-1"></span>
+        <span class="crater crater-2"></span>
+        <span class="crater crater-3"></span>
+        <span class="crater crater-4"></span>
+        <span class="crater crater-5"></span>
+        <span class="crater crater-6"></span>
+        <span class="crater crater-7"></span>
+      </span>
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+    </label>
+  </div>
+  <!-- Today's flight start -->
+  <div class="tableContainer" id="Today's Flight">
+    <h1 class="tableHeading">Today's Flight
+      <div class="dropdownf">
+        <button class="dropbtnf">Filter</button>
+        <div class="dropdown-contentf">
+          <a href="#Today's Flight Issue">Flight Issue</a>
+          <a href="#Departured Flight">Dep. Flight</a>
+          <a href="#Arrived Flight">Arrived Flight</a>
+        </div>
+      </div>
+    </h1>
+
+    <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>Flight No.</th>
+            <th>Airlines</th>
+            <th>Origin</th>
+            <th>Via</th>
+            <th>Destination</th>
+            <th>Dep Date</th>
+            <th>Dep Time</th>
+            <th>Arv Date</th>
+            <th>Arv Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="onTimeTbody">
+          <!-- <tr>
+            <td onclick="window.location.href = 'passenger.html';" class="hover-effect">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content"></div>
+              </div>
+            </td>
+          </tr> -->
+
+          <!--<tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdown">
+                <button class="dropbtn">&#x25BE;</button>
+                <div class="dropdown-content">
+
+                </div>
+              </div>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--<script>
+    // Function to add the input field, submit button, and departure button
+    function addDropdownContentElements() {
+      var dropdownContents = document.querySelectorAll('.dropdown-content');
+
+      dropdownContents.forEach(function (dropdownContent) {
+        var inputField = document.createElement('input');
+        inputField.setAttribute('type', 'text');
+        inputField.classList.add('input-field');
+        inputField.placeholder = 'Enter Time';
+
+        var submitButton = document.createElement('button');
+        submitButton.classList.add('submit-button');
+        submitButton.innerHTML = 'Issue';
+
+        var departureButton = document.createElement('button');
+        departureButton.classList.add('departure-button');
+        departureButton.innerHTML = 'Departure';
+
+        dropdownContent.appendChild(inputField);
+        dropdownContent.appendChild(submitButton);
+        dropdownContent.appendChild(departureButton);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', addDropdownContentElements);
+  </script>-->
+  <!-- Today's flight End -->
+
+  <!-- Issue flight start -->
+
+  <div class="tableContainerIssue" id="Today's Flight Issue">
+    <h1 class="tableHeadingIssue">Today's Flight Issues
+      <div class="dropdownI">
+        <button class="dropbtnI">Filter</button>
+        <div class="dropdown-contentI">
+          <a href="#Today's Flight">Today's Flight</a>
+          <a href="#Departured Flight">Dep. Flight</a>
+          <a href="#Arrived Flight">Arrived Flight</a>
+        </div>
+      </div>
+    </h1>
+    <div class="tableFixHeadIssue">
+      <table>
+        <thead>
+          <tr>
+            <th>Flight No.</th>
+            <th>Airlines</th>
+            <th>Origin</th>
+            <th>Via</th>
+            <th>Destination</th>
+            <th>Dep Date</th>
+            <th>Dep Time</th>
+            <th>Arv Date</th>
+            <th>Arv Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="issueTbody">
+          <!--<tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownIssue">
+                <button class="dropbtnIssue">&#x25BE;</button>
+                <div class="dropdown-contentIssue">
+
+                </div>
+              </div>
+            </td>
+          </tr>-->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--<script>
+    // Function to add the Issue Solved button
+    function addDropdownContentElementss() {
+      var dropdownContents = document.querySelectorAll('.dropdown-contentIssue');
+
+      dropdownContents.forEach(function (dropdownContent) {
+        var departureButtonIssue = document.createElement('button');
+        departureButtonIssue.classList.add('departure-buttonIssue');
+        departureButtonIssue.innerHTML = 'Issue Solved';
+
+        dropdownContent.appendChild(departureButtonIssue);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', addDropdownContentElementss);
+  </script>-->
+  <!-- Issue Flight End -->
+
+
+  <!-- Departured Flight Start -->
+  <div class="tableContainerDepartured" id="Departured Flight">
+    <h1 class="tableHeadingDepartured">Departured Flight
+      <div class="dropdownD">
+        <button class="dropbtnD">Filter</button>
+        <div class="dropdown-contentD">
+          <a href="#Today's Flight">Today's Flight</a>
+          <a href="#Today's Flight Issue">Flight Issue</a>
+          <a href="#Arrived Flight">Arrived Flight</a>
+        </div>
+      </div>
+    </h1>
+
+    <div class="tableFixHeadDepartured">
+      <table>
+        <thead>
+          <tr>
+            <th>Flight No.</th>
+            <th>Airlines</th>
+            <th>Origin</th>
+            <th>Via</th>
+            <th>Destination</th>
+            <th>Dep Date</th>
+            <th>Dep Time</th>
+            <th>Arv Date</th>
+            <th>Arv Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="departedTbody">
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';" class="hover-effect">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownDepartured">
+                <button class="dropbtnDepartured">&#x25BE;</button>
+                <div class="dropdown-contentDepartured"></div>
+              </div>
+            </td>
+          </tr>
+
+          <!--<tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownDepartured">
+              <button class="dropbtnDepartured">&#x25BE;</button>
+              <div class="dropdown-contentDepartured">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownDepartured">
+              <button class="dropbtnDepartured">&#x25BE;</button>
+              <div class="dropdown-contentDepartured">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownDepartured">
+              <button class="dropbtnDepartured">&#x25BE;</button>
+              <div class="dropdown-contentDepartured">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownDepartured">
+              <button class="dropbtnDepartured">&#x25BE;</button>
+              <div class="dropdown-contentDepartured">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownDepartured">
+              <button class="dropbtnDepartured">&#x25BE;</button>
+              <div class="dropdown-contentDepartured">
+
+              </div>
+            </div>
+          </td>
+        </tr>-->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--<script>
+    // Function to add the Arrived button
+    function addDropdownContentElementsss() {
+      var dropdownContents = document.querySelectorAll('.dropdown-contentDepartured');
+
+      dropdownContents.forEach(function (dropdownContent) {
+        var departureButtonDepartured = document.createElement('button');
+        departureButtonDepartured.classList.add('departure-buttonDepartured');
+        departureButtonDepartured.innerHTML = 'Arrived';
+
+        dropdownContent.appendChild(departureButtonDepartured);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', addDropdownContentElementsss);
+  </script>-->
+  <!-- Departured Flight End -->
+
+  <!-- Arrived Flight Start -->
+
+  <div class="tableContainerArrived" id="Arrived Flight">
+    <h1 class="tableHeadingArrived">Arrived Flight
+      <div class="dropdownA">
+        <button class="dropbtnA">Filter</button>
+        <div class="dropdown-contentA">
+          <a href="#Today's Flight">Today's Flight</a>
+          <a href="#Today's Flight Issue">Flight Issue</a>
+          <a href="#Departured Flight">Dep. Flight</a>
+        </div>
+      </div>
+    </h1>
+
+    <div class="tableFixHeadArrived">
+      <table>
+        <thead>
+          <tr>
+            <th>Flight No.</th>
+            <th>Airlines</th>
+            <th>Origin</th>
+            <th>Via</th>
+            <th>Destination</th>
+            <th>Dep Date</th>
+            <th>Dep Time</th>
+            <th>Arv Date</th>
+            <th>Arv Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="arrivedTbody">
+          <tr>
+            <td onclick="window.location.href = 'passenger.html';" class="hover-effect">AI 101</td>
+            <td>indigo</td>
+            <td>Kolkata</td>
+            <td>Delhi</td>
+            <td>Mumbai</td>
+            <td>06/06/23</td>
+            <td>12:30</td>
+            <td>05/06/23</td>
+            <td>23:30</td>
+            <td>
+              <div class="dropdownArrived">
+                <button class="dropbtnArrived">&#x25BE;</button>
+                <div class="dropdown-contentArrived"></div>
+              </div>
+            </td>
+          </tr>
+
+          <!--<tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownArrived">
+              <button class="dropbtnArrived">&#x25BE;</button>
+              <div class="dropdown-contentArrived">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownArrived">
+              <button class="dropbtnArrived">&#x25BE;</button>
+              <div class="dropdown-contentArrived">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownArrived">
+              <button class="dropbtnArrived">&#x25BE;</button>
+              <div class="dropdown-contentArrived">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownArrived">
+              <button class="dropbtnArrived">&#x25BE;</button>
+              <div class="dropdown-contentArrived">
+
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td onclick="window.location.href = 'passenger.html';">AI 101</td>
+          <td>indigo</td>
+          <td>Kolkata</td>
+          <td>Delhi</td>
+          <td>Mumbai</td>
+          <td>06/06/23</td>
+          <td>12:30</td>
+          <td>05/06/23</td>
+          <td>23:30</td>
+          <td>
+            <div class="dropdownArrived">
+              <button class="dropbtnArrived">&#x25BE;</button>
+              <div class="dropdown-contentArrived">
+
+              </div>
+            </div>
+          </td>
+        </tr>-->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--<script>
+    // Function to add the On Time button
+    function addDropdownContentElements() {
+      var dropdownContents = document.querySelectorAll('.dropdown-contentArrived');
+      dropdownContents.forEach(function (dropdownContent) {
+        var departureButtonArrived = document.createElement('button');
+        departureButtonArrived.classList.add('departure-buttonArrived');
+        departureButtonArrived.innerHTML = 'On Time';
+
+        dropdownContent.appendChild(departureButtonArrived);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', addDropdownContentElements);
+  </script>-->
+
+  <!-- Arrived Flight end -->
+
+  <!-- For Footer Space -->
+  <div class="Footer"></div>
+  <script src="adminDashboard.js"></script>
+
+</body>
+
+</html>

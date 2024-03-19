@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Passenger List</title>
+  <link rel="stylesheet" href="passengerList.css" />
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="#" class="unclickable">ADMIN PANEL</a>
+    <a href="adminDashboard.html">Dashboard</a>
+    <a href="listFlight.html">List Flight</a>
+    <a href="addFlight.html">Add Flight</a>
+    <a href="manageAirlines.html">Manage Airlines</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="dMode">
+    <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()">
+    <label for="hide-checkbox" class="toggle">
+      <span class="toggle-button">
+        <span class="crater crater-1"></span>
+        <span class="crater crater-2"></span>
+        <span class="crater crater-3"></span>   
+        <span class="crater crater-4"></span>
+        <span class="crater crater-5"></span>
+        <span class="crater crater-6"></span>
+        <span class="crater crater-7"></span>
+      </span>
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+    </label>
+  </div>
+  <div class="tableContainer" id="tableContainer">
+    <h1 class="tableHeading">Passenger Lists </h1>
+    <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>SL No.</th>
+            <th>Seat No.</th>
+            <th>Name</th>
+            <th>Contact Info</th>
+            <th>D.O.B</th>
+            <th>Class</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td id="date" colspan="7">
+            <div class="date-row">
+              <h2>Today,</h2>
+              <h1 id="current-date"></h1>
+            </div>
+          </td>
+        </tr>
+
+        <!-- <tr>
+          <td>01</td>
+          <td>F01</td>
+          <td>Anit Saha</td>
+          <td>1234567899</td>
+          <td>YYYY-MM-DD</td>
+          <td>Economy Class</td>
+          <td>20000</td>
+        </tr> -->
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<script src="passengerList.js"></script>
+</body>
+</html>

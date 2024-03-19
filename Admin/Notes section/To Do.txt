@@ -1,0 +1,8 @@
+-----------------02 07 2023------------------
+1. Add rows in adminDashboard html with db data
+
+    Arrived -> Today flight -> Departed || Issue flight
+
+-----------------03 07 2023------------------
+1. Add ontime functionality with Arrived list and today flight
+2. Add departed functionality with Departed list and today flight

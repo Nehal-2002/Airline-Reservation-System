@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+	<title>validation form</title>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+	<link type="text/css" rel="stylesheet" href="passengerForm.css" />
+
+</head>
+
+<body>
+
+	<div id="booking" class="section">
+		<div class="navbar">
+			<img src="logo.png">
+			<div class="icon">
+				<a class="logo" href="home.html" id="logo"><span>BookMy</span>Flight </a>
+			</div>
+
+			<div class="menu" id="menuu">
+				<ul>
+					<!-- <li><a href="home.html">HOME</a></li> -->
+					<li><a href="listFlight.html">Flight&nbspList</a></li>
+					<!-- <li><a href="#">CONTACT&nbspUS</a></li> -->
+					<li><a href="bookingHistory.html">Booking&nbspHistory</a></li>
+					<li><a id="userName" class="unclickable">Username</a></li> <!--Profile-->
+					<li><a href="logout">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="booking-cta">
+							<h1>Submit<br><span>Your Details</span><br> &  Book</h1>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<form class="booking-form">
+							<div class="row g-3">
+								<div class="col-md-4">
+									<label for="validationDefault01" class="form-label">First name</label>
+									<input type="text" class="form-control" id="validationDefault01" required>
+								</div>
+								<div class="col-md-4">
+									<label for="validationDefault02" class="form-label">Middle name</label>
+									<input type="text" class="form-control" id="validationDefault02">
+								</div>
+								<div class="col-md-4">
+									<label for="validationDefaultUsername" class="form-label">Last name</label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="validationDefaultUsername"
+											aria-describedby="inputGroupPrepend2" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label for="validationDefault03" class="form-label">Mobile no.</label>
+									<input type="tel" class="form-control" id="validationDefault03" required>
+								</div>
+								<div class="col-md-3">
+									<label for="validationDefault04" class="form-label" id="Default04">State</label>
+									<select class="form-select" id="validationDefault04" >
+										<option value="Andhra Pradesh">Andhra Pradesh</option>
+										<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										<option value="Assam">Assam</option>
+										<option value="Bihar">Bihar</option>
+										<option value="Chhattisgarh">Chhattisgarh</option>
+										<option value="Goa">Goa</option>
+										<option value="Gujarat">Gujarat</option>
+										<option value="Haryana">Haryana</option>
+										<option value="Himachal Pradesh">Himachal Pradesh</option>
+										<option value="Jharkhand">Jharkhand</option>
+										<option value="Karnataka">Karnataka</option>
+										<option value="Kerala">Kerala</option>
+										<option value="Madhya Pradesh">Madhya Pradesh</option>
+										<option value="Maharashtra">Maharashtra</option>
+										<option value="Manipur">Manipur</option>
+										<option value="Meghalaya">Meghalaya</option>
+										<option value="Mizoram">Mizoram</option>
+										<option value="Nagaland">Nagaland</option>
+										<option value="Odisha">Odisha</option>
+										<option value="Punjab">Punjab</option>
+										<option value="Rajasthan">Rajasthan</option>
+										<option value="Sikkim">Sikkim</option>
+										<option value="Tamil Nadu">Tamil Nadu</option>
+										<option value="Telangana">Telangana</option>
+										<option value="Tripura">Tripura</option>
+										<option value="Uttar Pradesh">Uttar Pradesh</option>
+										<option value="Uttarakhand">Uttarakhand</option>
+										<option value="West Bengal">West Bengal</option>
+									</select>
+								</div>
+								<div class="col-md-3">
+									<label for="validationDefault05" class="form-label">DOB</label>
+									<input type="date" class="form-control" id="validationDefault05" required>
+								</div>
+								<div class="col-12">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
+											required>
+											<label>
+												Yes,I Agree to terms and conditions <span onclick="toggleDropdown()" class="read-more">Read More</span>
+											</label>
+											<div id="dropdown-content" style="display: none;">
+												<p>
+													By accessing and using this website, you agree to comply with the terms and conditions outlined below.
+													This website and its content are provided for informational purposes only. We reserve the right to modify or update these terms at any time.
+													It is your responsibility to review these terms periodically for any changes. If you do not agree with these terms, please refrain from using this website.
+												</p>
+											</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<span type="button" id="spanSubmit" onclick="submit(event)" class="btn btn-primary">NEXT</span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="passengerForm.js">
+			// document.addEventListener("DOMContentLoaded", function () {
+			// 	var Input = document.getElementById("validationDefault03");
+			// 	Input.addEventListener("focus", function () {
+			// 		if (Input.value !== "+91 ") {
+			// 			Input.value = "+91 ";
+			// 		}
+			// 	});
+			// });
+		</script>
+</body>
+</html>

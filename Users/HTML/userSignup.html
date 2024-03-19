@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="userSignup.css">
+</head>
+
+<body onload="clearData()">
+    <div class="main">
+        <div class="navbar">
+            <img src="logo.png">
+            <div class="icon">
+                <a class="logo" href="home.html" id="logo"><span>BookMy</span>Flight </a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">HOME </a></li>
+                    <li><a href="userlogin.html">LOGIN </a></li>
+                    <li><a href="#">CONTACT&nbspUS</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>Take a Break From Life & <br><span>EXPLORE THE WORLD</span> <br>Beyond Our Imagination</h1>
+            <p class="par">Moreover it is important to travel to humans <br> quis nesciunt. Quos nulla vero
+                consequuntur, fugit nemo ad delectus
+                <br> Some travel to learn more while some travel to take a break from their life<br> No matter the
+                reason, travelling opens a big door for us to<br> explore the world beyond our imagination and indulge
+                in many things.
+            </p>
+
+            <div  class="form">
+                <h2>SignUp Here</h2>
+                <form id="userForm" action="signup" method="post" onsubmit="return validate()">
+                    <input type="text" id="Name" name="Name" minlength="3" placeholder="Enter Name Here" required>
+                    <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+                    <input type="password" id="password" name="Password" minlength="5" placeholder="Enter your password" >
+                    <input type="password" id="confirm-password" minlength="5" placeholder="Confirm your password" >
+                    <input class='btnn' type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="userSignup.js"></script>
+</body>
+
+</html>

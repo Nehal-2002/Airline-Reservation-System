@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+	<title>list Flight</title>
+	<link type="text/css" rel="stylesheet" href="bookingHistory.css" />
+</head>
+
+<body onload="fetchData()">
+
+	<div class="navbar">
+		<img src="logo.png">
+		<div class="icon">
+			<a class="logo" href="home.html" id="logo"><span>BookMy</span>Flight </a>
+		</div>
+
+		<div class="menu" id="menuu">
+			<ul>
+				<!-- <li><a href="home.html">HOME</a></li> -->
+				<li><a href="userPanel.html">Book</a></li>
+				<li><a href="listFlight.html">Flight&nbspList</a></li>
+				<!-- <li><a href="#">CONTACT&nbspUS</a></li> -->
+				<li><a id="userName" class="unclickable">Username</a></li> <!--Profile-->
+				<li><a href="logout">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="tableContainer" id="tableContainer">
+		<h1 class="tableHeading">Booking History</h1>
+		<div class="tableFixHead">
+			<table>
+				<thead>
+					<tr>
+						<th>Passenger Name</th>
+						<th>Flight No.</th>
+						<th>Airlines</th>
+						<th>Origin</th>
+						<th>Via</th>
+						<th>Destination</th>
+						<th>Dep Date</th>
+						<th>Dep Time</th>
+						<th>Arv Date</th>
+						<th>Arv Time</th>
+						<th>Seat No.</th>
+						<th>Ticket</th>
+						<th>Cancel</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+					<td id="date" colspan="13">
+						<div class="date-row">
+							<h2>Today,</h2>
+							<h1 id="current-date"></h1>
+						</div>
+					</td>
+				</tr> -->
+
+					<!-- <tr id="row">
+						<td>Anit Saha</td>
+						<td>AI 101</td>
+						<td>Air India</td>
+						<td>Kolkata</td>
+						<td>Delhi</td>
+						<td>Mumbai</td>
+						<td>06/06/23</td>
+						<td>12:30</td>
+						<td>05/06/23</td>
+						<td>23:30</td>
+						<td>F01</td>
+						<td>
+							onclick="sending()" send to the particular Ticket page
+							<div class="show">
+								<button onclick="sending()">Show</button>
+							</div>
+						</td>
+						<td>
+							<div class="show">
+								<button class="red-button" onclick="sending()">Cancel</button>
+							</div>
+						</td>
+					</tr> -->
+
+					<!-- <tr id="row">
+						<td>Anit Saha</td>
+						<td>AI 101</td>
+						<td>Air India</td>
+						<td>Kolkata</td>
+						<td>Delhi</td>
+						<td>Mumbai</td>
+						<td>06/06/23</td>
+						<td>12:30</td>
+						<td></td>
+						<td></td>
+						<td>B02</td>
+						<td> -->
+							<!-- onclick="sending()" send to the perticular Ticket page -->
+							<!-- <div class="show">
+								<button onclick="sending()">Show</button> -->
+								<!-- <div class="dropdown-content">
+								<a href="ticket1.html">Ticket 1</a>
+								<a href="ticket2.html">Ticket 2</a>
+							</div>
+							</div> -->
+							<!-- </div>
+						</td>
+						<td>
+							<div class="show">
+								<button class="red-button" onclick="sending()">Cancel</button>
+							</div>
+						</td>
+					</tr> -->
+				</tbody>
+			</table>
+			<div id="popup" class="popup"></div>
+		</div>
+	</div>
+	<script src="bookingHistory.js"></script>
+</body>
+
+</html>

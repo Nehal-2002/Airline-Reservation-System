@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Manage Airlines</title>
+  <link rel="stylesheet" href="manageAirlines.css">
+
+</head>
+
+<body onload="fetchData()">
+  <div class="navbar">
+    <a href="#" class="unclickable">ADMIN PANEL</a>
+    <a href="adminDashboard.html">Dashboard</a>
+    <a href="listFlight.html">List Flights</a>
+    <a href="addFlight.html">Add Flight</a>
+    <a href="queryHistory.html">Query History</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="dMode">
+    <input type="checkbox" id="hide-checkbox" onclick="toggleDarkMode()">
+    <label for="hide-checkbox" class="toggle">
+      <span class="toggle-button">
+        <span class="crater crater-1"></span>
+        <span class="crater crater-2"></span>
+        <span class="crater crater-3"></span>   
+        <span class="crater crater-4"></span>
+        <span class="crater crater-5"></span>
+        <span class="crater crater-6"></span>
+        <span class="crater crater-7"></span>
+      </span>
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+    </label>
+  </div>
+  <div class="tableContainer" id="tableContainer">
+    <h1 class="tableHeading">Manage Airlines </h1>
+    <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <td id="Field" colspan="11">
+                <div class="inputField">
+                  <input id="airlineName" type="text" placeholder="Enter Airlines Name">
+                  <button id="submitButton" onclick="insertData()">Add Airlines</button>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <th>SL No.</th>
+            <th>Airlines Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--<tr>
+            <td>01</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td>IndiGo</td>
+            <td>
+              <div class="btn"></div>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="manageAirlines.js"></script>
+</body>
+
+</html>

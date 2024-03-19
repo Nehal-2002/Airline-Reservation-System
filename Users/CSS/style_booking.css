@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap"); * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+}
+
+.section {
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%) center center / cover, url("forest.jpg");
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  height: 65px;
+  margin-top: 0px;
+  background-color: #f9f9f9;
+  border-radius: 0%;
+}
+
+.navbar>img{
+  height: 90%;
+  width:5%;
+  float:left;
+  color: black;
+  filter:brightness(1.3) invert(0);
+  padding-top: 10px;
+}
+
+.icon{
+  width: 730px;
+  float: left;
+  height: 70px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+
+.menu ul li a:hover{
+  background: #20c1d5;
+  color: white;
+  padding: 7px;
+}
+
+#logo{
+  margin-right: 26rem;
+  font-size: 36px;
+  font-weight: 550;
+  color: black;
+  text-shadow: 0px 1px 1px black;
+  margin-bottom: 5px;
+  text-decoration: none;
+  padding-left: 10px;
+}
+#logo span{
+  color: #20c1d5;
+}
+
+.menu {
+  width: 36%;
+  float: left;
+  height: 70px;
+}
+
+ul {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+
+
+.section .section-center {
+  position: absolute;
+  top: 57%;
+  left: 0px;
+  right: 0px;
+  transform: translateY(-50%);
+}
+
+#booking {
+  font-family: Lato, sans-serif;
+  background-size: cover;
+  background-position: center center;
+  color: rgb(25, 26, 30);
+}
+
+.booking-form {
+  position: relative;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.16) 50%, rgba(0, 0, 0, 0.16) 50%);
+  max-width: 642px;
+  width: 100%;
+  margin: auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px -5px;
+}
+
+.booking-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+  background-color: transparent;
+  height: 65px;
+  padding: 24px 15px 0px;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(32, 193, 213);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: none;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+  color: rgb(223, 229, 233);
+}
+
+.booking-form .form-control::placeholder {
+  color: rgb(223, 229, 233);
+}
+
+.booking-form .form-control:focus {
+  background: transparent;
+}
+
+.booking-form input[type="date"].form-control:invalid {
+  color: rgb(223, 229, 233);
+}
+
+/* Target the calendar icon inside the input field */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert the color to white */
+}
+
+.booking-form .form-control:focus {
+  background: black;
+}
+
+.booking-form select.form-control {
+  appearance: none;
+}
+
+.booking-form select.form-control + .select-arrow {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: rgb(223, 229, 233);
+  font-size: 14px;
+}
+
+.booking-form select.form-control + .select-arrow::after {
+  content: "⏵";
+  display: block;
+  transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 24px;
+  height: 24px;
+  font-size: 12px;
+  color: rgb(32, 193, 213);
+}
+
+.booking-form .form-checkbox input {
+  position: absolute !important;
+  margin-left: -9999px !important;
+  visibility: hidden !important;
+}
+
+.booking-form .form-checkbox label {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 30px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.booking-form .form-checkbox label + label {
+  margin-left: 15px;
+}
+
+.booking-form .form-checkbox input + span {
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(223, 229, 233);
+  border-radius: 50%;
+}
+
+.booking-form .form-checkbox input + span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(32, 193, 213);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease 0s;
+}
+
+.booking-form .form-checkbox input:not(:checked) + span::after {
+  opacity: 0;
+}
+
+.booking-form .form-checkbox input:checked + span::after {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+
+.booking-form .submit-btn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 193, 213);
+  font-weight: 400;
+  height: 65px;
+  font-size: 18px;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.booking-cta {
+  margin-top: 1px;
+}
+
+.booking-cta h1 {
+  font-family: "Times New Roman";
+  font-size: 50px;
+  padding-left: 20px;
+  margin-top: 36%;
+  letter-spacing: 2px;
+}
+
+.booking-cta {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.booking-cta span {
+  color: rgb(32, 193, 213);
+  font-size: 65px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

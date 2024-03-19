@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Contact Us </title>
+    <link rel="stylesheet" href="contactUs.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>We Will Try to Solve Your Quary Through Your Mail</p>
+      <form>
+        <div class="input-box">
+          <input id="name" type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+          <input id="email" type="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box message-box">
+            <input id="msg" type="text" minlength="10" maxlength="400" placeholder="Enter Your message" required>
+        </div>
+        <div class="button">
+          <input type="button" value="Send Now" onclick="sendData()">
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <script>
+    const sendData=()=>{
+      let n = document.getElementById('name').value
+      let e = document.getElementById('email').value
+      let m = document.getElementById('msg').value
+
+      let url = 'storeQuary'
+
+      let p = fetch(url,{
+        method: 'POST',
+      body: JSON.stringify({
+        Name : n,
+        Email: e,
+        Msg : m
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+      })
+
+      p.then((res)=>{
+        return res.json()
+      })
+      .then((data)=>{
+            if(data.Message == 'Stored successfully')
+            {
+              window.close()
+            }
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    }
+  </script>
+</body>
+</html>

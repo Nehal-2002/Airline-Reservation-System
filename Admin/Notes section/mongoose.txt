@@ -1,0 +1,14 @@
+Read operation in mongodb
+Admin.find().then((result)=>{
+    console.log(result)
+}).catch((err)=>{
+    console.log(err)
+})
+
+
+Insert operation in mongodb
+const newAdmin = new Admin({_id:5,Email:"example5@gmail.com",Password:"lol5"})
+newAdmin.save()
+console.log(newAdmin)
+
+Delete operation in mongodb
